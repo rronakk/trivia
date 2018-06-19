@@ -1,0 +1,11 @@
+.game{
+    text-align: center;
+}
+
+body{
+    background-image: url("../images/lanw2.jpg");
+
+}
+#start{
+    margin: 5%;
+}

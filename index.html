@@ -1,0 +1,55 @@
+<!<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script src="assets/javascript/app.js" async></script>
+</head>
+<body>
+    <div class="jumbotron">
+        <h1 class="display-4">Kane You Kick it?</h1>
+        <p class="lead">Game of Throw-Ins</p>
+        <hr class="my-4">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="score col-md-3 card">
+                <div>Correct : <span id="correct"></span></div>
+                <div>Incorrect :  <span id="incorrect"></span></div>
+                <div>Late : <span id="late"></span></div>
+            </div>
+            <div class="col-md-6">
+
+            </div>
+            <div class="timer col-md-3 card"> Time Left : 
+                <span id="timer"></span>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <div class="container card game">
+        <div id="ques"></div>
+        <div id="a1" class="answer"></div>
+        <div id="a2" class="answer"></div>
+        <div id="a3" class="answer"></div>
+        <div id="a4" class="answer"></div>     
+    </div>
+    <br>
+
+    <div id="sol" class ="container card game">
+            <!-- <img src="assests/images/obi_wan.jpeg" class="img-fluid cover" alt="obi">
+            <img src="assests/images/obi_wan.jpeg" class="img-fluid cover" alt="obi"> -->
+
+        </div>
+    <button class="btn-primary container " id="start"> Start Game </button>
+
+</body>
+</html>
