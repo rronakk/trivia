@@ -2,7 +2,7 @@
 window.onload = function() {
     $("#start").on("click", showNextQues);
     $(".game").hide();
-    $("#gameover").hide();
+    // $("#gameover").hide();
   };
 
 var questions = [
@@ -98,6 +98,7 @@ var isAnswered = false;
 var missed = 0;
 
 function showNextQues () {
+    console.log(quesNum)
     $("#start").hide();
     $(".game").show();
     $("#sol").removeClass("bg-danger bg-warning bg-success text-dark");
@@ -108,15 +109,18 @@ function showNextQues () {
         clockRunning = true;
         displayQuestion(quesNum);
         evaluateAnswer(quesNum);
+        quesNum++;
+
     }
     else{
+        $("#start").off("click");
         $("#timer").html("Game Over");
         $(".game").hide();
-        $("#gameover").show();
+        // $("#gameover").show();
+        restartGame();
 
 
     }
-    quesNum++;
 }
 
 function evaluateAnswer(quesNum){
@@ -177,3 +181,18 @@ function displayQuestion(index){
         $("#sol").html("");
     }
 
+function restartGame(){
+    quesNum = 0;
+    correct = 0;
+    incorrect = 0;
+    isAnswered = false;
+    missed = 0;
+    console.log("inrestart method" + quesNum);
+    $("#start").show();
+    $("#correct").html(correct);
+    $("#incorrect").html(incorrect);
+    $("#late").html(missed);
+
+    $("#start").on("click", showNextQues);
+
+}
