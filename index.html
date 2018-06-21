@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Monofett" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -14,42 +15,52 @@
 </head>
 <body>
     <div class="jumbotron">
-        <h1 class="display-4">Kane You Kick it?</h1>
-        <p class="lead">Game of Throw-Ins</p>
-        <hr class="my-4">
+            <img src="/assets/images/got2.jpg" class="nav-cover">
     </div>
+    <hr>
     <div class="container">
-        <div class="row">
-            <div class="score col-md-3 card">
-                <div>Correct : <span id="correct"></span></div>
-                <div>Incorrect :  <span id="incorrect"></span></div>
-                <div>Late : <span id="late"></span></div>
+        <div class="row justify-content-center">
+            <div class=" col-md-2 card bg-warning ">
+                <div class="card-header text-center">Scores</div>
+                <button type="button" class="btn btn-primary scores">
+                        correct : <span class="badge badge-light" id="correct"></span>
+                </button>
+                <button type="button" class="btn btn-primary scores">
+                        Incorrect : <span class="badge badge-light" id="incorrect"></span>
+                </button>
+                <button type="button" class="btn btn-primary scores">
+                        Late : <span class="badge badge-light" id="late"></span>
+                </button>
             </div>
-            <div class="col-md-6">
-
+            <div class="col-md-7 ">
+                <img src="/assets/images/goalpostbanner.png" class="img-fluid goal">
             </div>
-            <div class="timer col-md-3 card"> Time Left : 
-                <span id="timer"></span>
+            <div class="time text-white col-md-2 card bg-danger ">
+                <div class="card-header text-center">Time left</div>
+                <div id="timer"></div> 
             </div>
         </div>
     </div>
-    <br>
-
-    <div class="container card game">
-        <div id="ques"></div>
-        <div id="a1" class="answer"></div>
-        <div id="a2" class="answer"></div>
-        <div id="a3" class="answer"></div>
-        <div id="a4" class="answer"></div>     
+    <hr>
+    <div class="container card game bg-dark justify-content-center">
+        <button id="ques" class="answer btn btn-info"></button>
+        <br>
+        <button id="a1" class="answer btn btn-light"></button>
+        <button id="a2" class="answer btn btn-secondary"></button>
+        <button id="a3" class="answer btn btn-light"></button>
+        <button id="a4" class="answer btn btn-secondary"></button>
     </div>
     <br>
 
-    <div id="sol" class ="container card game">
-            <!-- <img src="assests/images/obi_wan.jpeg" class="img-fluid cover" alt="obi">
-            <img src="assests/images/obi_wan.jpeg" class="img-fluid cover" alt="obi"> -->
-
-        </div>
-    <button class="btn-primary container " id="start"> Start Game </button>
+    <div class="p-3 mb-2 text-white container " id="sol"></div>
+    </div>
+    <div id="start">
+        <img src="/assets/images/football-1.png" class="img-fluid">
+        <button type="button" class="start-txt">Start Game</button>
+    </div>
+    <div id="gameover">
+        <img src="assets/images/gotflag.png" class="img-fluid">
+    </div>
 
 </body>
 </html>

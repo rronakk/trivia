@@ -1,11 +1,75 @@
+.jumbotron{
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    background-color: black;
+    height: 100px;
+}
+.scores{
+    margin: 2px 0px;
+    pointer-events: none;
+}
+hr{
+    border: 0px;
+}
+.nav-cover{
+    width: 50%;
+    height: 100px;;
+}
 .game{
     text-align: center;
 }
-
+.goal{
+    display: block;
+    margin: auto;
+}
+.row{
+    height: 180px;
+}
 body{
     background-image: url("../images/lanw2.jpg");
 
 }
-#start{
-    margin: 5%;
+#timer{
+    font-size: 35px;
+    text-align: center;
+    padding: 20px;
+}
+
+#ques{
+  font-size: 20px;
+  margin: 0;
+  pointer-events: none;
+}
+.answer{
+    margin: 0.25% 30%;
+    letter-spacing: 2px;
+}
+#sol{
+    text-align: center;
+    border-radius: 10px;
+    letter-spacing: 2px;
+    font-size: 18px;
+
+}
+#start {
+    height: 200px;
+    width: 200px;
+    margin: auto;
+    position: relative;
+    font-family: 'Monofett', cursive;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.start-txt{
+    margin-left: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+#gameover{
+    height: 200px;
+    width: 400px;
+    margin: auto;
 }

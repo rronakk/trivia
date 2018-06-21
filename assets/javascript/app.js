@@ -1,6 +1,8 @@
 
 window.onload = function() {
     $("#start").on("click", showNextQues);
+    $(".game").hide();
+    $("#gameover").hide();
   };
 
 var questions = [
@@ -97,7 +99,10 @@ var missed = 0;
 
 function showNextQues () {
     $("#start").hide();
-    time = 10
+    $(".game").show();
+    $("#sol").removeClass("bg-danger bg-warning bg-success text-dark");
+    $("#sol").empty();
+    time = 30;
     if (!clockRunning && (questions.length > quesNum)){
         intervalId = setInterval(showTimer, 1000);
         clockRunning = true;
@@ -105,7 +110,11 @@ function showNextQues () {
         evaluateAnswer(quesNum);
     }
     else{
-        $(".timer").html("Game Over");
+        $("#timer").html("Game Over");
+        $(".game").hide();
+        $("#gameover").show();
+
+
     }
     quesNum++;
 }
@@ -118,6 +127,7 @@ function evaluateAnswer(quesNum){
             correct++;
             $("#correct").html(correct);
             $(".answer").off("click");
+            $("#sol").addClass("bg-success");
             $("#sol").html("Wohoo ! You picked Correct Answer : " + questions[quesNum][questions[quesNum].correctAnswer])
         }
         else{
@@ -125,7 +135,8 @@ function evaluateAnswer(quesNum){
             incorrect++;
             $("#incorrect").html(incorrect);
             $(".answer").off("click");
-            $("#sol").html("Boo ! You picked Wrong Answer , Correct Answer is " + questions[quesNum][questions[quesNum].correctAnswer])
+            $("#sol").addClass("bg-danger");
+            $("#sol").text("Boo ! You picked Wrong Answer , Correct Answer is " + questions[quesNum][questions[quesNum].correctAnswer])
 
         }
     })
@@ -142,11 +153,15 @@ function showTimer(){
         missed ++ ;
         $("#late").html(missed);
         stopTimer();
-        showNextQues();
+        $("#sol").addClass("bg-warning text-dark");
+        console.log(quesNum);
+        $("#sol").html("Alas ! You missed it , Correct Answer is " + questions[quesNum-1][questions[quesNum-1].correctAnswer])
+        setTimeout(showNextQues, 2000);
+
     }
     else if (isAnswered === true){
         stopTimer();
-        setTimeout(showNextQues, 2000);
+        setTimeout(showNextQues, 3000);
     }
     $("#timer").text(time);  
 }
