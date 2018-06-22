@@ -192,7 +192,6 @@ function restartGame(){
     $("#correct").html(correct);
     $("#incorrect").html(incorrect);
     $("#late").html(missed);
-
     $("#start").on("click", showNextQues);
 
 }
